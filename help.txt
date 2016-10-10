@@ -1,0 +1,32 @@
+***Main Menu***
+0. Exit the program
+1. Addition
+2. Subtraction
+3. Multiplication
+4. Division
+5. Tip Calculator
+6. Grocery Calculator
+7. Answer History
+8. HELP!
+
+1.Addition
+	Adds a set of numbers in the order they are inputted:
+		Number 1 + Number 2 = Answer
+2.Subtraction
+	Subtracts two numbers in the order they are inputted:
+		Number 1 - Number 2 = Answer
+3.Multiplication
+	Multiplies two numbers in the order they are inputted:
+		Number 1 * Number 2 = Answer
+4.Division
+	Divides two numbers in the order they are inputted:
+		Number 1 / Number 2 = Answer
+5.Tip Calculator
+	Allows you to enter your bill amount and they amount you want to tip.
+		billTotal + tipAmount% = Total Bill
+
+6. Allows you to enter your the items in your shopping list and returns the total amount  of your bill including sales tax.
+	Item1 + Item2 + Item3…=Total including sales tax
+
+7. Prints a list of answers from your session.
+
