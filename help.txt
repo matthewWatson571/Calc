@@ -25,8 +25,13 @@
 	Allows you to enter your bill amount and they amount you want to tip.
 		billTotal + tipAmount% = Total Bill
 
-6. Allows you to enter your the items in your shopping list and returns the total amount  of your bill including sales tax.
-	Item1 + Item2 + Item3…=Total including sales tax
+6.Grocery Calculator 
+Allows you to enter your the items in your shopping list and returns the total amount  of your bill including sales tax.
+	Item1 + Item2 + Item3… = Total(including sales tax)
 
-7. Prints a list of answers from your session.
+7. Answer History
+Prints a list of answers from your session.
+
+8.HELP!
+Brings you here.
 

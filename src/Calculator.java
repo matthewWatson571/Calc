@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Calculator {
 public static ArrayList<Double> answers = new ArrayList<>();
@@ -38,9 +40,9 @@ public static ArrayList<Double> answers = new ArrayList<>();
         double num2;
         String operator = " - ";
         Scanner numberInput = new Scanner(System.in);
-        System.out.println("Enter your first number that will be subtracted from");
+        System.out.println("Enter the number that will be subtracted from");
         num1 = numberInput.nextDouble();
-        System.out.println("Enter your second number to be subtracted ");
+        System.out.println("Enter the number to be subtracted ");
         num2 = numberInput.nextDouble();
         double answer= num1-num2;
         System.out.println(num1 + " + " + num2 + " = " + answer);
@@ -95,8 +97,12 @@ public static ArrayList<Double> answers = new ArrayList<>();
         tip = numberInput.nextDouble();
         tipAmount=tip/100;
         afterTip= (total*tipAmount)+total;
-        System.out.println("your tip should be $" + (afterTip-total));
-        System.out.println("Your total including tip is $" + afterTip);
+        BigDecimal convertedTip = new BigDecimal(afterTip-total);
+        BigDecimal roundedTip = convertedTip.setScale(2, RoundingMode.DOWN);
+        BigDecimal convertedTotal = new BigDecimal(afterTip);
+        BigDecimal roundedTotal = convertedTotal.setScale(2, RoundingMode.DOWN);
+        System.out.println("your tip should be $" + (roundedTip));
+        System.out.println("Your total including tip is $" + roundedTotal);
 
     }
 
@@ -125,7 +131,10 @@ public static ArrayList<Double> answers = new ArrayList<>();
                 total += groceryList.get(i);
                 afterTax = (total * .06) + total;
             }
-            System.out.println("Your total after tax is $" + afterTax);
+
+            BigDecimal convertedTotal = new BigDecimal(afterTax);
+            BigDecimal roundedTotal = convertedTotal.setScale(2, RoundingMode.DOWN);
+            System.out.println("Your total after tax is $" + roundedTotal);
         }
     }
 
