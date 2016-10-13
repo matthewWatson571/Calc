@@ -9,21 +9,25 @@ public class main {
     public static void main(String [] args) throws IOException {
         String fileName="Help.txt";
         String fileName2="numbers.txt";
+        TipCalc tipCalc=new TipCalc();
+        Calculator calc=new Calculator();
+        GroceryList groceryList=new GroceryList();
+
         int menuItem = -1;
         while (menuItem != 0) {
             menuItem = menu();
             switch (menuItem) {
-                case 1: Calculator.addition();
+                case 1: calc.addition();
                     break;
-                case 2: Calculator.subtraction();
+                case 2: calc.subtraction();
                     break;
-                case 3: Calculator.multiplication();
+                case 3: calc.multiplication();
                     break;
-                case 4:Calculator.division();
+                case 4: calc.division();
                     break;
-                case 5: Calculator.tipCalc();
+                case 5: tipCalc.tipCalc();
                     break;
-                case 6:Calculator.groceries();
+                case 6:groceryList.groceryList();
                     break;
                 case 7:Calculator.answers();
                     break;
@@ -56,9 +60,5 @@ public class main {
             System.out.println("Please Enter a choice: ");
             choice = input.nextInt();
             return choice;
-
         }
-
-
     }
-
