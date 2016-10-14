@@ -10,15 +10,15 @@ public class TipCalc {
     public double tip=0;
     public double total=0;
     Scanner s = new Scanner(System.in);
+    IO io=new IO();
 
     public void tipCalc() throws IOException {
-        Scanner numberInput = new Scanner(System.in);
         System.out.println("How much was your bill?");
-        total = numberInput.nextDouble();
+        total = s.nextDouble();
         tipSwitch();
     }
 
-    public double tipSwitch() {
+    public double tipSwitch() throws IOException{
         int menuItem;
         System.out.println("How was your meal?");
         System.out.println("0. Return to Main Menu");
@@ -31,7 +31,6 @@ public class TipCalc {
         System.out.println("Please Enter a choice: ");
         menuItem = s.nextInt();
         if (menuItem != 0) {
-//            menuItem = menu();
             switch (menuItem) {
                 case 1:
                     tip = 0.30;
@@ -62,14 +61,16 @@ public class TipCalc {
                      return tip;
     }
 
-public void tipDisplay(){
+public void tipDisplay() throws IOException{
     double afterTip;
     afterTip = (total * tip) + total;
     BigDecimal convertedTip = new BigDecimal(afterTip - total);
     BigDecimal roundedTip = convertedTip.setScale(2, RoundingMode.DOWN);
     BigDecimal convertedTotal = new BigDecimal(afterTip);
     BigDecimal roundedTotal = convertedTotal.setScale(2, RoundingMode.DOWN);
+    io.clear();
     System.out.println("your tip should be $" + (roundedTip));
     System.out.println("Your total including tip is $" + roundedTotal);
+    IO.tipCalcOut(roundedTip, roundedTotal);
     }
 }
